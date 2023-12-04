@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>meal List</h1>
+<section class="p-4">
+    <div class="grid grid-cols-4 gap-4">
+        {% for meal in meals %}
+        <div class="card bg-base-100 shadow-xl">
+            <figure>
+                <img src="{{meal.strMealThumb}}" alt="{{meal.strMeal}}" />
+            </figure>
+            <div class="card-body">
+                <h2 class="card-title">{{meal.strMeal}}</h2>
+                <p>Meal Id: {{meal.idMeal}}</p>
+                <div class="card-actions justify-end">
+                    <button class="btn btn-primary rounded-none">
+                        Buy Now
+                    </button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock content %}
